@@ -5,9 +5,15 @@ import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
+import 'package:tuto6/services/post_service.dart';
 import 'package:tuto6/view_model/theme_view_model.dart';
 
-void main() {
+//main.dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final databaseProvider = PostService();
+  await databaseProvider.initDatabase();
+  print(databaseProvider.getPosts());
   runApp(const MyApp());
 }
 
