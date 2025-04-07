@@ -36,5 +36,5 @@ class Settings extends StatelessWidget {
     );
   }
 }
-}
+
 
