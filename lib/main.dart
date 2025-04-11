@@ -8,6 +8,7 @@ import 'package:tuto6/services/post_service.dart';
 import 'package:tuto6/view_model/post_view_model.dart';
 import 'package:tuto6/view_model/theme_view_model.dart';
 import 'package:tuto6/views/new_List.dart';
+import 'package:tuto6/views/post_details.dart';
 import 'package:tuto6/views/post_list.dart';
 import 'package:tuto6/views/settings.dart';
 
@@ -56,7 +57,14 @@ class MyApp extends StatelessWidget {
               GoRoute(
                 path: 'settings',
                 builder: (context, state) => const Settings(),
-              )
+              ),
+              GoRoute(
+                path: 'posts/:id',
+                builder:
+                    (context, state) => PostDetails(
+                  postId: state.pathParameters['id'] ?? '',
+                ),
+              ),
             ]
         )
       ]
